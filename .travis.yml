@@ -1,0 +1,37 @@
+language: php
+
+cache:
+  directories:
+    - $HOME/travis_cache
+
+addons:
+ apt:
+   sources:
+   - ubuntu-toolchain-r-test
+   packages:
+   - gcc-4.8
+
+env:
+  - CC=clang
+  - CC=gcc-4.8 CXX=g++-4.8 VALGRIND=1
+
+install:
+  - sudo apt-get install -qq $CC
+  - $CC --version
+  # Test some builds with valgrind to check for memory leaks and invalid memory accesses
+  - if [ "$VALGRIND" -eq 1 ]; then sudo apt-get install -qq valgrind; export TEST_PHP_ARGS="-m"; valgrind --version; fi
+
+php:
+  - '7.0'
+  - '7.1'
+
+before_script:
+ - $CC --version
+ - (export CC; phpize && ./configure && make)
+
+script:
+ - phpenv config-rm xdebug.ini || true
+ - ci/run_tests.sh
+
+notifications:
+ email: false

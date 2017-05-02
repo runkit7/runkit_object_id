@@ -1,0 +1,8 @@
+// $Id$
+// vim:ft=javascript
+
+ARG_ENABLE("runkit_object_id", "Enable runkit_object_id support", "no");
+
+if (PHP_RUNKIT_OBJECT_ID != "no") {
+	EXTENSION("runkit_object_id", "runkit_object_id.c");
+}
