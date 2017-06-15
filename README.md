@@ -2,13 +2,13 @@ runkit\_object\_id (by the runkit7 project)
 ======================================================
 
 For the safest function in [runkit(7)](https://github.com/runkit7/runkit7).
-This implements `runkit_object_id() : int`,
+This implements `runkit_object_id() : ?int`,
 which is similar to `spl_object_hash() : string`, but returns an integer instead of a string.
-It's faster if you need to take the ids of a large number of objects.
+The `runkit_object_id()` is faster if you need to take the ids of a large number of objects, and avoids the memory overhead of storing extra strings.
 
 [An integer id has been a requested function for a while, but doesn't seem like it will be added to the php standard libraries](https://bugs.php.net/bug.php?id=52657)
 
-Supports php 7.0\+. PHP 5.x support will be added back later.
+Supports php 5.3+ and php 7.0\+.
 
 See [runkit\_object\_id-api.php](./runkit_object_id-api.php) for function stubs, and an alternate (slower) pure PHP implementation.
 
