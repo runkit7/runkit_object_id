@@ -1,6 +1,6 @@
 /*
   +----------------------------------------------------------------------+
-  | PHP Version 7                                                        |
+  | PHP Version 5, 7                                                     |
   +----------------------------------------------------------------------+
   | Copyright (c) 1997-2006 The PHP Group, (c) 2008-2015 Dmitry Zenovich |
   | "runkit7" patches (c) 2015-2017 Tyson Andre                          |
@@ -36,9 +36,15 @@ PHP_FUNCTION(runkit_object_id)
 {
 	zval *obj;
 
+#ifdef ZEND_PARSE_PARAMETERS_START
 	ZEND_PARSE_PARAMETERS_START(1, 1)
 		Z_PARAM_OBJECT(obj)
-	ZEND_PARSE_PARAMETERS_END_EX(RETURN_FALSE);
+	ZEND_PARSE_PARAMETERS_END_EX(RETURN_NULL());
+#else
+	if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "o", &obj) == FAILURE) {
+		RETURN_NULL();
+	}
+#endif
 
 	RETURN_LONG(Z_OBJ_HANDLE_P(obj));
 }
@@ -68,7 +74,6 @@ zend_module_entry runkit_object_id_module_entry = {
 #ifdef COMPILE_DL_RUNKIT_OBJECT_ID
 ZEND_GET_MODULE(runkit_object_id)
 #endif
-
 
 
 /* {{{ PHP_MINFO_FUNCTION
