@@ -1,6 +1,6 @@
 /*
   +----------------------------------------------------------------------+
-  | PHP Version 7                                                        |
+  | PHP Version 5, 7                                                     |
   +----------------------------------------------------------------------+
   | Copyright (c) 1997-2006 The PHP Group, (c) 2008-2015 Dmitry Zenovich |
   | "runkit7" patches (c) 2015-2017 Tyson Andre                          |
@@ -35,7 +35,7 @@
 #include "ext/standard/info.h"
 #include "ext/standard/php_string.h"
 
-#define PHP_RUNKIT_OBJECT_ID_VERSION "1.0.5"
+#define PHP_RUNKIT_OBJECT_ID_VERSION "1.0.0"
 
 #ifndef phpext_runkit_object_id_ptr
 extern zend_module_entry runkit_object_id_module_entry;

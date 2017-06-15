@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.4.9" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+http://pear.php.net/dtd/tasks-1.0.xsd
+http://pear.php.net/dtd/package-2.0
+http://pear.php.net/dtd/package-2.0.xsd">
+ <!-- not an actual pecl extension name -->
+ <name>runkit_object_id</name>
+ <channel>pecl.php.net</channel>
+ <summary>Get an integer id for objects.</summary>
+ <description>Get an integer id for objects. (Similar to spl_object_hash, which returns a hexadecimal string)
+ </description>
+ <lead>
+  <name>Tyson Andre</name>
+  <user></user>
+  <email></email>
+  <active>yes</active>
+ </lead>
+ <date>2017-06-14</date>
+ <version>
+  <release>1.0.6</release>
+  <api>1.0.6</api>
+ </version>
+ <stability>
+  <release>stable</release>
+  <api>stable</api>
+ </stability>
+ <license uri="http://www.opensource.org/licenses/BSD-3-Clause">BSD License (3 Clause)</license>
+ <notes>
+   Initial release, based on runkit7/runkit7 1.0.5
+ </notes>
+ <contents>
+  <dir name="/">
+   <dir name="tests">
+    <file name="runkit_object_id.phpt" role="test" />
+   </dir> <!-- //tests -->
+   <file name="config.m4" role="src" />
+   <file name="config.w32" role="src" />
+   <file name="php_runkit_object_id.h" role="src" />
+   <file name="runkit_object_id.c" role="src" />
+   <file name="LICENSE" role="doc" />
+   <file name="README.md" role="doc" />
+  </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.0.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.0b1</min>
+   </pearinstaller>
+  </required>
+ </dependencies>
+ <providesextension>runkit_object_id</providesextension>
+ <extsrcrelease />
+ <changelog>
+  <release>
+   <date>2017-06-14</date>
+   <version>
+    <release>1.0.6</release>
+    <api>1.0.6</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <license uri="http://www.opensource.org/licenses/BSD-3-Clause">BSD License (3 Clause)</license>
+   <notes>
+     Initial release, based on runkit7/runkit7 1.0.5
+   </notes>
+  </release>
+ </changelog>
+</package>
