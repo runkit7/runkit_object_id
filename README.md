@@ -1,10 +1,15 @@
 runkit\_object\_id (by the runkit7 project)
 ===========================================
 
+(Also provides a native implementation of `spl_object_id`)
+
 For the safest function in [runkit(7)](https://github.com/runkit7/runkit7).
 This implements `runkit_object_id() : ?int`,
 which is similar to `spl_object_hash() : string`, but returns an integer instead of a string.
 The `runkit_object_id()` is faster if you need to take the ids of a large number of objects, and avoids the memory overhead of storing extra strings.
+
+By default, this provides a native alias (for PHP <= 7.1) for [`spl_object_id`](https://github.com/php/php-src/pull/2611), which is a native part of PHP 7.2.
+Add `--enable-runkit-spl_object-id=no` to the `configure` options to disable this.
 
 Both `runkit_object_id($obj)` and `spl_object_hash($obj)` return identifiers that are unique **for the lifetime of the object**.
 After the object is garbage collected, that identifier can/will be used again.
@@ -20,6 +25,8 @@ Motivation
 ----------
 
 [An integer id has been a requested function for a while, but doesn't seem like it will be added to the php standard libraries](http://grokbase.com/t/php/php-internals/08chfwdavh/new-function-proposal-spl-object-id#2008121730trg75pyz8mn92dqwemjb14k8)
+
+This will be built into php 7.2+ as `spl_object_id()`, but this module provides aliases for php <= 7.1
 
 Installation
 ------------

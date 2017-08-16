@@ -26,6 +26,12 @@
 #include "php_runkit_object_id.h"
 #include "SAPI.h"
 
+#ifdef PHP_RUNKIT_SPL_OBJECT_ID
+#if PHP_VERSION_ID < 70200
+#define PHP_RUNKIT_PROVIDES_SPL_OBJECT_ID
+#endif
+#endif
+
 ZEND_BEGIN_ARG_INFO_EX(arginfo_runkit_object_id, 0, 0, 1)
 	ZEND_ARG_INFO(0, obj)
 ZEND_END_ARG_INFO()
@@ -52,6 +58,10 @@ PHP_FUNCTION(runkit_object_id)
 
 zend_function_entry runkit_object_id_functions[] = {
 	PHP_FE(runkit_object_id,										arginfo_runkit_object_id)
+	// Add native spl_object_id substitute for PHP <= 7.1 by default
+#ifdef PHP_RUNKIT_PROVIDES_SPL_OBJECT_ID
+	PHP_FALIAS(spl_object_id,	runkit_object_id,					arginfo_runkit_object_id)
+#endif
 	PHP_FE_END
 };
 
@@ -82,7 +92,15 @@ PHP_MINFO_FUNCTION(runkit_object_id)
 {
 	php_info_print_table_start();
 	php_info_print_table_header(2, "runkit_object_id support", "enabled");
-
+	php_info_print_table_header(2, "spl_object_id alias support",
+#ifdef PHP_RUNKIT_PROVIDES_SPL_OBJECT_ID
+			"enabled"
+#elif PHP_VERSION_ID >= 70200
+			"unnecessary in php 7.2+"
+#else
+			"disabled"
+#endif
+	);
 }
 /* }}} */
 
