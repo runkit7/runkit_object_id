@@ -22,3 +22,16 @@ function runkit_object_id($obj) {
     }
     return null;
 }
+
+/**
+ * (Will be built into php 7.2+)
+ *
+ * Gets a unique integer identifier (Will be reused when the object is garbage collected) for an object.
+ * This is similar to `spl_object_hash`, but returns an int instead of a string.
+ *
+ * @param object $obj - The object
+ * @return ?int - Returns null if given a non-object.
+ */
+function spl_object_id($obj) {
+    return runkit_object_id($obj);
+}
