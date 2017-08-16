@@ -16,25 +16,25 @@ php:
 matrix:
   exclude:
   - php: 5.4
-    env: CC=gcc-4.6 CFLAGS="-g" VALGRIND=1
+    env: CC=gcc-4.8 CFLAGS="-g" VALGRIND=1
   - php: 5.4
-    env: CC=gcc-4.6 CXX=g++-4.6 USE_32BIT=1 VALGRIND=1 PHP_CUSTOM=maintainer-zts PHP_CONFIGURE_ARGS='--disable-all --enable-maintainer-zts --enable-debug --enable-cgi --enable-session --enable-json'
+    env: CC=gcc-4.8 CXX=g++-4.8 USE_32BIT=1 VALGRIND=1 PHP_CUSTOM=maintainer-zts PHP_CONFIGURE_ARGS='--disable-all --enable-maintainer-zts --enable-debug --enable-cgi --enable-session --enable-json'
   - php: 5.5
-    env: CC=gcc-4.6 CFLAGS="-g -O3"
+    env: CC=gcc-4.8 CFLAGS="-g -O3"
   - php: 5.5
-    env: CC=gcc-4.6 CXX=g++-4.6 USE_32BIT=1 VALGRIND=1 PHP_CUSTOM=maintainer-zts PHP_CONFIGURE_ARGS='--disable-all --enable-maintainer-zts --enable-debug --enable-cgi --enable-session --enable-json'
+    env: CC=gcc-4.8 CXX=g++-4.8 USE_32BIT=1 VALGRIND=1 PHP_CUSTOM=maintainer-zts PHP_CONFIGURE_ARGS='--disable-all --enable-maintainer-zts --enable-debug --enable-cgi --enable-session --enable-json'
   - php: 5.6
-    env: CC=gcc-4.6 CFLAGS="-g -O3"
+    env: CC=gcc-4.8 CFLAGS="-g -O3"
   - php: 5.6
-    env: CC=gcc-4.6 CXX=g++-4.6 USE_32BIT=1 VALGRIND=1 PHP_CUSTOM=maintainer-zts PHP_CONFIGURE_ARGS='--disable-all --enable-maintainer-zts --enable-debug --enable-cgi --enable-session --enable-json'
+    env: CC=gcc-4.8 CXX=g++-4.8 USE_32BIT=1 VALGRIND=1 PHP_CUSTOM=maintainer-zts PHP_CONFIGURE_ARGS='--disable-all --enable-maintainer-zts --enable-debug --enable-cgi --enable-session --enable-json'
   - php: 7.0
-    env: CC=gcc-4.6 CFLAGS="-g -O3"
+    env: CC=gcc-4.8 CFLAGS="-g -O3"
   - php: 7.0
-    env: CC=gcc-4.6 CXX=g++-4.6 USE_32BIT=1 VALGRIND=1 PHP_CUSTOM=maintainer-zts PHP_CONFIGURE_ARGS='--disable-all --enable-maintainer-zts --enable-debug --enable-cgi --enable-session --enable-json'
+    env: CC=gcc-4.8 CXX=g++-4.8 USE_32BIT=1 VALGRIND=1 PHP_CUSTOM=maintainer-zts PHP_CONFIGURE_ARGS='--disable-all --enable-maintainer-zts --enable-debug --enable-cgi --enable-session --enable-json'
   - php: 7.2
-    env: CC=gcc-4.6 CFLAGS="-g -O3"
+    env: CC=gcc-4.8 CFLAGS="-g -O3"
   - php: 7.2
-    env: CC=gcc-4.6 CXX=g++-4.6 USE_32BIT=1 VALGRIND=1 PHP_CUSTOM=maintainer-zts PHP_CONFIGURE_ARGS='--disable-all --enable-maintainer-zts --enable-debug --enable-cgi --enable-session --enable-json'
+    env: CC=gcc-4.8 CXX=g++-4.8 USE_32BIT=1 VALGRIND=1 PHP_CUSTOM=maintainer-zts PHP_CONFIGURE_ARGS='--disable-all --enable-maintainer-zts --enable-debug --enable-cgi --enable-session --enable-json'
 
 
 cache:
@@ -42,9 +42,9 @@ cache:
     - $HOME/travis_cache
 
 env:
-  - CC=gcc-4.6 CFLAGS="-g -O3"
-  - CC=gcc-4.6 CFLAGS="-g" VALGRIND=1
-  - CC=gcc-4.6 CXX=g++-4.6 USE_32BIT=1 VALGRIND=1 PHP_CUSTOM=maintainer-zts PHP_CONFIGURE_ARGS='--disable-all --enable-maintainer-zts --enable-debug --enable-cgi --enable-session --enable-json'
+  - CC=gcc-4.8 CFLAGS="-g -O3"
+  - CC=gcc-4.8 CFLAGS="-g" VALGRIND=1
+  - CC=gcc-4.8 CXX=g++-4.8 USE_32BIT=1 VALGRIND=1 PHP_CUSTOM=maintainer-zts PHP_CONFIGURE_ARGS='--disable-all --enable-maintainer-zts --enable-debug --enable-cgi --enable-session --enable-json'
 
 install:
   - sudo apt-get update -qq
