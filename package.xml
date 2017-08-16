@@ -7,7 +7,7 @@ http://pear.php.net/dtd/package-2.0.xsd">
  <name>runkit_object_id</name>
  <channel>pecl.php.net</channel>
  <summary>Get an integer id for objects.</summary>
- <description>Get an integer id for objects. (Similar to spl_object_hash, which returns a hexadecimal string)
+ <description>Get an integer id for objects. (Similar to spl_object_hash, which returns a hexadecimal string. Same as spl_object_id, which will be built into php 7.2+)
  </description>
  <lead>
   <name>Tyson Andre</name>
@@ -15,10 +15,10 @@ http://pear.php.net/dtd/package-2.0.xsd">
   <email></email>
   <active>yes</active>
  </lead>
- <date>2017-06-14</date>
+ <date>2017-08-16</date>
  <version>
-  <release>1.0.6</release>
-  <api>1.0.6</api>
+  <release>1.1.0</release>
+  <api>1.1.0</api>
  </version>
  <stability>
   <release>stable</release>
@@ -26,12 +26,13 @@ http://pear.php.net/dtd/package-2.0.xsd">
  </stability>
  <license uri="http://www.opensource.org/licenses/BSD-3-Clause">BSD License (3 Clause)</license>
  <notes>
-   Initial release, based on runkit7/runkit7 1.0.5
+   Add spl_object_id() alias, for PHP 7.1 and below.
  </notes>
  <contents>
   <dir name="/">
    <dir name="tests">
     <file name="runkit_object_id.phpt" role="test" />
+    <file name="spl_object_id.phpt" role="test" />
    </dir> <!-- //tests -->
    <file name="config.m4" role="src" />
    <file name="config.w32" role="src" />
@@ -54,6 +55,21 @@ http://pear.php.net/dtd/package-2.0.xsd">
  <providesextension>runkit_object_id</providesextension>
  <extsrcrelease />
  <changelog>
+  <release>
+   <date>2017-08-16</date>
+   <version>
+    <release>1.1.0</release>
+    <api>1.1.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <license uri="http://www.opensource.org/licenses/BSD-3-Clause">BSD License (3 Clause)</license>
+   <notes>
+     Add fast native alias for spl_object_id by default, in PHP 5.0-7.1 (unnecessary starting in PHP 7.2)
+   </notes>
+  </release>
   <release>
    <date>2017-06-14</date>
    <version>
