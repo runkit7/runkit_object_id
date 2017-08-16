@@ -24,9 +24,8 @@ See [runkit\_object\_id-api.php](./runkit_object_id-api.php) for function stubs,
 Motivation
 ----------
 
-[An integer id has been a requested function for a while, but doesn't seem like it will be added to the php standard libraries](http://grokbase.com/t/php/php-internals/08chfwdavh/new-function-proposal-spl-object-id#2008121730trg75pyz8mn92dqwemjb14k8)
-
-This will be built into php 7.2+ as `spl_object_id()`, but this module provides aliases for php <= 7.1
+[An integer object id has been a requested function for a while.](http://grokbase.com/t/php/php-internals/08chfwdavh/new-function-proposal-spl-object-id#2008121730trg75pyz8mn92dqwemjb14k8)
+[`spl_object_id()` is getting added to PHP 7.2](https://github.com/php/php-src/pull/2611), but there's nothing for php <= 7.1
 
 Installation
 ------------
