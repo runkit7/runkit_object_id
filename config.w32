@@ -2,7 +2,7 @@
 // vim:ft=javascript
 
 ARG_ENABLE("runkit_object_id", "Enable runkit_object_id support", "no");
-ARG_ENABLE("runkit-spl_object_id", "Disable runtime manipulation", "yes");
+ARG_ENABLE("runkit-spl_object_id", "Enable spl_object_id alias of runkit_object_id in php <= 7.1", "yes");
 
 if (PHP_RUNKIT_OBJECT_ID != "no") {
 	AC_DEFINE("PHP_RUNKIT_SPL_OBJECT_ID", PHP_RUNKIT_OBJECT_ID == "yes", "Runkit spl_object_id substitute");
